@@ -5,6 +5,7 @@
   Date: 12-Mar-18
   Time: 12:58 PM
   To change this template use File | Settings | File Templates.
+  TODO : ajouter sécurité pour la connexion (renvoyer à seConnecter.jsp si non connecté)
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -14,7 +15,7 @@
     <script src="../js/bootstrap.min.js"></script>
     <title>Ajouter oeuvre</title>
 </head>
-<body class="margin">
+<body>
 <h2 class="text-center">Gestion des oeuvres</h2>
 <br/>
 <jsp:include page="menu.jsp"/>
@@ -46,7 +47,6 @@
 
             </div>
         </div>
-        <!-- Boutons Ajouter -->
         <button type="submit" name="bt" class="btn btn-default">Ajouter</button>
         <button type="reset" name="bt" class="btn btn-default">RAZ</button>
     </FORM>

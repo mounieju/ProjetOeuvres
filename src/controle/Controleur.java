@@ -32,7 +32,9 @@ public class Controleur extends HttpServlet {
 	private static final String AJOUTER_OEUVRE = "ajouterOeuvre";
 	private static final String INSERER_OEUVRE = "insererOeuvre";
 	private static final String LISTER_OEUVRE = "listerOeuvre";
-	private static final String GERER_OEUVRE = "gererReservations";
+	private static final String MODIFIER_OEUVRE = "modifierOeuvre";
+	private static final String RESERVER_OEUVRE = "reserverOeuvre";
+	private static final String GERER_RESERVATIONS = "gererReservations";
 	private static final String SE_DECONNECTER = "seDeconnecter";
 
 
@@ -164,6 +166,10 @@ public class Controleur extends HttpServlet {
 				e.printStackTrace();
 			}
 			destinationPage = "/GestionDesOeuvres/listerOeuvre.jsp";
+		}
+
+		else if (GERER_RESERVATIONS.equals(actionName)) {
+			destinationPage = "/GestionDesOeuvres/gererReservation.jsp";
 		}
 
 		else if (SE_DECONNECTER.equals(actionName)) {
