@@ -9,7 +9,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li><a href="Controleur?action=home">Home</a></li>
+            <li><a href="Controleur?action=home">Accueil</a></li>
             <li><a href="Controleur?action=ajouterOeuvre">Ajouter une oeuvre</a></li>
             <li><a href="Controleur?action=listerOeuvre">Consulter le catalogue</a></li>
             <li><a href="Controleur?action=gererReservations">Confirmer les réservations</a></li>

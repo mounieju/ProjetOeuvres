@@ -18,18 +18,18 @@
     <br/>
     <form class="form-horizontal" name='connexion' method="post" action="Controleur?action=seConnecter">
         <div class="form-group">
-            <label class="control-label col-sm-2" for="user"> Username : </label>
+            <label class="control-label col-sm-2" for="user"> Identifiant : </label>
             <div class="col-sm-10">
-                <INPUT type="text" class="form-control" name="username" required placeholder="Type your LAST NAME" id="user">
+                <INPUT type="text" class="form-control" name="username" required placeholder="Tapez votre NOM" id="user">
             </div>
         </div>
         <div class="form-group">
-            <label class="control-label col-sm-2" for="pwd">Password : </label>
+            <label class="control-label col-sm-2" for="pwd">Mot de passe : </label>
             <div class="col-sm-10">
-                <INPUT type="password" class="form-control" name="password" required placeholder="Type your FIRST NAME" id="pwd">
+                <INPUT type="password" class="form-control" name="password" required placeholder="Tapez votre PRENOM" id="pwd">
             </div>
         </div>
-        <button type="submit" name="bt" class="btn btn-default text-center">Login</button>
+        <button type="submit" name="bt" class="btn btn-default text-center">Se connecter</button>
         <button type="reset" name="bt" class="btn btn-default text-center">RAZ</button>
     </form>
 </body>
