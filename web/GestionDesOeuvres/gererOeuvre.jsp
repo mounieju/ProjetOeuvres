@@ -23,7 +23,7 @@
 <H3 class="text-center"> Modifier une oeuvre </H3>
 <DIV>
     <FORM class="form-horizontal" name='identification' method="post" action="Controleur?action=sauvegarderOeuvre">
-        <INPUT hidden type="text" class="form-control" name="txtIDOeuvre" id="id" value="${oeuvreAModifier.idOeuvrevente}">
+        <INPUT  type="hidden" class="form-control" name="txtIDOeuvre" id="id" value="${oeuvreAModifier.idOeuvrevente}">
         <div class="form-group">
             <label class="control-label col-sm-3" for="titre"> Titre de l'oeuvre : </label>
             <div class="col-sm-5">
@@ -41,7 +41,7 @@
             <div class="col-sm-5">
                 <select class="form-control" name="txtpropietaire" id="propietaire">
                     <c:forEach items="${proprietaires}" var="item">
-                        <option ${(oeuvreAModifier.proprietaire == item)? "selected": ""} id="${item.idProprietaire}">${item.nomProprietaire}</option>
+                        <option ${(oeuvreAModifier.proprietaire.getIdProprietaire() == item.idProprietaire)? "selected": ""} id="${item.idProprietaire}">${item.nomProprietaire}</option>
                     </c:forEach>
                 </select>
 

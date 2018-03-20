@@ -239,8 +239,8 @@ public class Service {
 		DialogueBd unDialogueBd = DialogueBd.getInstance();
 		try {
 			mysql = "UPDATE oeuvrevente" +
-					"SET titre_oeuvrevente='"+uneOeuvre.getTitreOeuvrevente()+"', prix_oeuvrevente='"+uneOeuvre.getPrixOeuvrevente()+"',id_proprietaire='" + uneOeuvre.getProprietaire().getIdProprietaire()+"'"+
-					"WHERE id_oeuvrevente="+uneOeuvre.getIdOeuvrevente();
+					" SET titre_oeuvrevente='"+uneOeuvre.getTitreOeuvrevente()+"', prix_oeuvrevente='"+uneOeuvre.getPrixOeuvrevente()+"',id_proprietaire='" + uneOeuvre.getProprietaire().getIdProprietaire()+"'"+
+					" WHERE id_oeuvrevente="+uneOeuvre.getIdOeuvrevente();
 			unDialogueBd.insertionBD(mysql);
 		} catch (MonException e) {
 			throw e;

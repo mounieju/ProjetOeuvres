@@ -196,7 +196,7 @@ public class Controleur extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			destinationPage = "/GestionDesOeuvres/listerOeuvre.jsp";
+			destinationPage = "/GestionDesOeuvres/home.jsp";
 		}
 
 		else if (GERER_RESERVATIONS.equals(actionName)) {
