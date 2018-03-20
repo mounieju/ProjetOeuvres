@@ -32,8 +32,10 @@
                 <td>${item.proprietaire.getPrenomProprietaire()}</td>
                 <td> <!-- TODO : je ne sais pas si quand on click sur le bouton réserver, si on est redirigé sur la page "gererReservation" ou si on change juste la donnée dans la BDD (Controller + Service)
                  TODO : faire la page modifier oeuvre + Service + Controlleur -->
-                    <button type="submit" formaction="Controleur?action=reserverOeuvre" class="btn btn-info ${(item.etatOeuvrevente=="L")? "active":"disabled"}">Réserver</button>
-                    <button type="submit" formaction="Controleur?action=modifierOeuvre" class="btn btn-warning">Modifier</button>
+                    <form method="post">
+                    <button type="submit" name="reserv" value="${item.idOeuvrevente}" formaction="Controleur?action=reserverOeuvre" class="btn btn-info ${(item.etatOeuvrevente=="L")? "active":"disabled"}">Réserver</button>
+                    <button type="submit" name="modif" value="${item.idOeuvrevente}" formaction="Controleur?action=modifierOeuvre" class="btn btn-warning">Modifier</button>
+                    </form>
                 </td>
             </tr>
         </c:forEach>

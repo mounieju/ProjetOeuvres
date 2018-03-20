@@ -20,11 +20,11 @@
     <br/>
 <jsp:include page="menu.jsp"/>
 <br/>
-    <h3 class="text-center">Welcome</h3>
+    <h3 class="text-center">Bienvenue</h3>
 
     <div>
     <p>Vous pourrez ici gérer les oeuvres : en ajouter, y consulter le catalogue, les modifier.</p>
-    <p>Vous pourrez aussi gérer les réservations</p>
+    <p>Vous pourrez aussi gérer les réservations.</p>
 
 </div>
 </body>

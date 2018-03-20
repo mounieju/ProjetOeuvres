@@ -3,11 +3,11 @@
 <!-- <Context path="/ProgrammeDatasource" debug="1" 
     reloadable="true"> -->
 <Context>
-        <Resource name="jdbc/DSOeuvre"
+        <Resource name="jdbc/baseoeuvre"
             auth="Container"
             type="javax.sql.DataSource"
-            username="userepul"
-            password="epul"
+            username="root"
+            password=""
             driverClassName="com.mysql.jdbc.Driver"
             url="jdbc:mysql://localhost:3306/baseoeuvre"
             maxActive="8"

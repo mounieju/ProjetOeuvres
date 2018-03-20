@@ -20,34 +20,34 @@
 <br/>
 <jsp:include page="menu.jsp"/>
 <br/>
-<H3 class="text-center"> Ajout d'une oeuvre </H3>
+<H3 class="text-center"> Modifier une oeuvre </H3>
 <DIV>
-    <FORM class="form-horizontal" name='identification' method="post" action="Controleur?action=insererOeuvre">
+    <FORM class="form-horizontal" name='identification' method="post" action="Controleur?action=sauvegarderOeuvre">
+        <INPUT hidden type="text" class="form-control" name="txtIDOeuvre" id="id" value="${oeuvreAModifier.idOeuvrevente}">
         <div class="form-group">
             <label class="control-label col-sm-3" for="titre"> Titre de l'oeuvre : </label>
             <div class="col-sm-5">
-                <INPUT type="text" class="form-control" name="txttitre" id="titre">
+                <INPUT type="text" class="form-control" name="txttitre" id="titre" value="${oeuvreAModifier.titreOeuvrevente}">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-3" for="prix">Prix : </label>
             <div class="col-sm-5">
-                <INPUT type="number" step="0.01" min="0" class="form-control" name="txtprix" id="prix">
+                <INPUT type="number" step="0.01" min="0" class="form-control" name="txtprix" id="prix" value="${oeuvreAModifier.prixOeuvrevente}">
             </div>
         </div>
         <div class="form-group">
             <label class="control-label col-sm-3" for="propietaire">Propriétaire :</label>
             <div class="col-sm-5">
                 <select class="form-control" name="txtpropietaire" id="propietaire">
-                    <option selected disabled hidden>Nom propriétaire</option>
                     <c:forEach items="${proprietaires}" var="item">
-                        <option id="${item.idProprietaire}">${item.nomProprietaire}</option>
+                        <option ${(oeuvreAModifier.proprietaire == item)? "selected": ""} id="${item.idProprietaire}">${item.nomProprietaire}</option>
                     </c:forEach>
                 </select>
 
             </div>
         </div>
-        <button type="submit" name="bt" class="btn btn-default">Ajouter</button>
+        <button type="submit" name="bt" class="btn btn-default">Modifier</button>
         <button type="reset" name="bt" class="btn btn-default">RAZ</button>
     </FORM>
 </DIV>

@@ -33,6 +33,7 @@ public class Controleur extends HttpServlet {
 	private static final String INSERER_OEUVRE = "insererOeuvre";
 	private static final String LISTER_OEUVRE = "listerOeuvre";
 	private static final String MODIFIER_OEUVRE = "modifierOeuvre";
+	private static final String SAUVEGARDER_OEUVRE = "sauvegarderOeuvre";
 	private static final String RESERVER_OEUVRE = "reserverOeuvre";
 	private static final String GERER_RESERVATIONS = "gererReservations";
 	private static final String SE_DECONNECTER = "seDeconnecter";
@@ -161,6 +162,36 @@ public class Controleur extends HttpServlet {
 			try {
 				Service unService = new Service();
 				request.setAttribute("mesOeuvres", unService.consulterListeOeuvres());
+			} catch (MonException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			destinationPage = "/GestionDesOeuvres/listerOeuvre.jsp";
+		}
+
+		else if (MODIFIER_OEUVRE.equals(actionName)){
+			try{
+				Service unS = new Service();
+				Oeuvrevente uneO = unS.rechercherOeuvreIdParam(Integer.parseInt(request.getParameter("modif")));
+				request.setAttribute("oeuvreAModifier", uneO);
+				request.setAttribute("proprietaires", unS.listeProprietaires());
+			} catch (MonException e){
+				e.printStackTrace();
+			}
+			destinationPage = "/GestionDesOeuvres/gererOeuvre.jsp";
+		}
+
+		else if (SAUVEGARDER_OEUVRE.equals(actionName)){
+			try {
+				Service unService = new Service();
+				Oeuvrevente uneOeuvre = unService.rechercherOeuvreIdParam(Integer.parseInt(request.getParameter("txtIDOeuvre")));
+				uneOeuvre.setTitreOeuvrevente(request.getParameter("txttitre"));
+				uneOeuvre.setEtatOeuvrevente("L");
+				uneOeuvre.setPrixOeuvrevente(Float.parseFloat(request.getParameter("txtprix")));
+				Proprietaire myP = unService.rechercherProprietaire(request.getParameter("txtpropietaire"));
+				uneOeuvre.setProprietaire(myP);
+				unService.updateOeuvre(uneOeuvre);
+
 			} catch (MonException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
